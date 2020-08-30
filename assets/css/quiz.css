@@ -1,0 +1,34 @@
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 80%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgba(7, 218, 25, 0.726);
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+  .choice-container:hover {
+    cursor: pointer;
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+    background-color: lightgreen;
+  }
+  
+  .choice-prefix {
+    padding: 1.5rem 2.5rem;
+    color: green;
+    width: 100%;
+  }
+  
+  .choice-text {
+    padding: 1.5rem;
+  }
+
+  .correct {
+    background-color: purple;
+  }
+  
+  .incorrect {
+    background-color:red;
+  }

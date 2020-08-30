@@ -45,7 +45,7 @@
     font-weight: 200;
   }
   
-  /* UTILITIES */
+  /* Standard Utility Details */
   
   .container {
     width: 100vw;
@@ -83,7 +83,8 @@
     display: none;
   }
   
-  /* BUTTONS */
+
+  /* Quiz Buttons */
   .btn {
     font-size: 1.8rem;
     padding: 1rem 0;
@@ -94,6 +95,7 @@
     text-decoration: none;
     color: green;
     background-color: white;
+    border-radius: 8px;
   }
   
   .btn:hover {
