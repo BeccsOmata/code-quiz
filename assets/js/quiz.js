@@ -77,7 +77,7 @@ let questions = [
     {
         question: "How should work be allocated to the team in an Agile project?",
             choice1: "ScrumMaster should allocate specific tasks to individuals",
-            choice2: "Tasks should randomly be allocated to team memebers, using Planning Poker",
+            choice2: "Tasks should randomly be allocated to team members, using Planning Poker",
             choice3: "Team members should self-select tasks appropriate to their skills",
             choice4: "The most complex tasks should be allocated by the ScrumMaster",
             answer: 3
@@ -105,7 +105,7 @@ startQuiz = () => {
 
 getNewQuestion = () => {
     if (availableQuestion.length === 0 || questionCounter >= MAX_QUESTION) {
-        return window.location.assign("./end.html");
+        return window.location.assign("./highscores.html");
     }
     questionCounter++;
     const questionIndex = Math.floor(Math.random() * availableQuestion.length);
@@ -125,13 +125,15 @@ choices.forEach(choice => {
     choice.addEventListener("click", e => {
         if (!acceptingAnswers) return;
 
-    acceptingAnswers = false;
-    const selectedChoice = e.target;
-    const selectedAnswer = selectedChoice.dataset["number"];
-
-    const classToApply = "incorrect";
-        if (selectedAnswer == currentQuestion.answer) {
-            classToApply = "correct";
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset["number"];
+    
+        const classToApply =
+          selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+    
+        if (classToApply === "correct") {
+          incrementScore(CORRECT_BONUS);
         }
 
     selectedChoice.parentElement.classList.add(classToApply);
@@ -140,8 +142,13 @@ choices.forEach(choice => {
         selectedChoice.parentElement.classList.remove(classToApply);
         getNewQuestion();
     }, 1000);
-    
+
     });
 });
+
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+  };
 
 startQuiz();
