@@ -1,5 +1,7 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
+const questionCounterText = document.getElementById("questionCounter");
+const scoreText = document.getElementById("score");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -29,7 +31,7 @@ let questions = [
             choice1: "C-Level & Product Owner Meeting",
             choice2: "Backlog Refinement",
             choice3: "Sprint Planning Meeting",
-            choice4: "DeveloperDefining Sprint Terms",
+            choice4: "Developer Defining Sprint Terms",
             answer: 3
     },
     {
@@ -57,8 +59,8 @@ let questions = [
             answer: 2
     },
     {
-        question: "What does NOT belong to the gaile manifesto's main pillars?",
-            choice1: "Indivduals & interactions over processes and tools",
+        question: "What does NOT belong to the agile manifesto's main pillars?",
+            choice1: "Individuals & interactions over processes and tools",
             choice2: "Working software over comprehensive documentation",
             choice3: "Processes over people",
             choice4: "Custom collaboration over contract negotiation",
@@ -103,8 +105,7 @@ startQuiz = () => {
 
 getNewQuestion = () => {
     if (availableQuestion.length === 0 || questionCounter >= MAX_QUESTION) {
-    //go to the end page
-        return window.location.assign("/end.html");
+        return window.location.assign("./end.html");
     }
     questionCounter++;
     const questionIndex = Math.floor(Math.random() * availableQuestion.length);
@@ -128,8 +129,10 @@ choices.forEach(choice => {
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
 
-    const classToApply =
-        selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+    const classToApply = "incorrect";
+        if (selectedAnswer == currentQuestion.answer) {
+            classToApply = "correct";
+        }
 
     selectedChoice.parentElement.classList.add(classToApply);
 
@@ -137,6 +140,7 @@ choices.forEach(choice => {
         selectedChoice.parentElement.classList.remove(classToApply);
         getNewQuestion();
     }, 1000);
+    
     });
 });
 
