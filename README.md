@@ -14,3 +14,5 @@ quiz.js
 highscores.js
 
 Github - https://github.com/BeccsOmata/code-quiz.git
+
+Website - https://beccsomata.github.io/code-quiz/
