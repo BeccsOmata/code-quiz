@@ -31,12 +31,68 @@ let questions = [
             choice3: "Sprint Planning Meeting",
             choice4: "DeveloperDefining Sprint Terms",
             answer: 3
-    }
+    },
+    {
+        question: "Who is responsible for prioritizing the backlog?",
+            choice1: "Product Owner",
+            choice2: "Project Manager",
+            choice3: "Lead Developer",
+            choice4: "Business Analyst",
+            answer: 1
+    },
+    {
+        question: "What is a disadvantage of the classical waterfall model?",
+            choice1: "Quicker release of useable product to customer",
+            choice2: "Ability to incorporate changes easily",
+            choice3: "Easier to self manage",
+            choice4: "End-Product has to be fully anticipated beforehand",
+            answer: 4
+    },
+    {
+        question: "What is the effect of having a large visible story board on a wall?",
+            choice1: "Removes the need to create reports for management",
+            choice2: "Continuously communicates progress within the team & stakeholders",
+            choice3: "Allows the PM to allocate tasks to specific team members",
+            choice4: "It is restrictive, not allowing the team to innovate & change",
+            answer: 2
+    },
+    {
+        question: "What does NOT belong to the gaile manifesto's main pillars?",
+            choice1: "Indivduals & interactions over processes and tools",
+            choice2: "Working software over comprehensive documentation",
+            choice3: "Processes over people",
+            choice4: "Custom collaboration over contract negotiation",
+            answer: 3
+    },
+    {
+        question: "Which of the following is NOT a typical artifact of the scrum framework?",
+            choice1: "Product Backlog",
+            choice2: "Sprint Backlog",
+            choice3: "Burndown Chart",
+            choice4: "Gantt Chart",
+            answer: 4
+    },
+    {
+        question: "How should work be allocated to the team in an Agile project?",
+            choice1: "ScrumMaster should allocate specific tasks to individuals",
+            choice2: "Tasks should randomly be allocated to team memebers, using Planning Poker",
+            choice3: "Team members should self-select tasks appropriate to their skills",
+            choice4: "The most complex tasks should be allocated by the ScrumMaster",
+            answer: 3
+    },
+    {
+        question: "Where are the customer requirements stored?",
+            choice1: "In the Product Backlog",
+            choice2: "In the Sprint Backlog",
+            choice3: "In a database",
+            choice4: "In a Scrum Product Requirement Specification",
+            answer: 1
+    },
 ];
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
-const MAX_QUESTION = 3;
+const MAX_QUESTION = 10;
 
 startQuiz = () => {
     questionCounter = 0;
